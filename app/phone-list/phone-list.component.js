@@ -1,6 +1,8 @@
+define(['angular', 'phoneService'], function(angular){
 'use strict';
 
 // Register `phoneList` component, along with its associated controller and template
+angular.module('phoneList',['core.phone']);
 angular.
   module('phoneList').
   component('phoneList', {
@@ -12,3 +14,4 @@ angular.
       }
     ]
   });
+});

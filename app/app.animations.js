@@ -1,14 +1,14 @@
+define(['angular', 'angular.animate'], function(angular){
 'use strict';
-
-angular.
-  module('phonecatApp').
+var phonecatAnimations = angular.module('phonecatAnimations', ['ngAnimate']);
+phonecatAnimations.
   animation('.phone', function phoneAnimationFactory() {
     return {
       addClass: animateIn,
       removeClass: animateOut
     };
 
-    function animateIn(element, className, done) {
+    var animateIn = function(element, className, done) {
       if (className !== 'selected') return;
 
       element.css({
@@ -25,7 +25,7 @@ angular.
       };
     }
 
-    function animateOut(element, className, done) {
+    var animateOut = function (element, className, done) {
       if (className !== 'selected') return;
 
       element.css({
@@ -41,3 +41,5 @@ angular.
       };
     }
   });
+  return phonecatAnimations;
+});
